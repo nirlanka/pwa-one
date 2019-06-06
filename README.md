@@ -10,6 +10,14 @@ ue --prefix=one --routing=true --skipInstall=true --style=sass```
 PWA setup:
 ```ng add @angular/pwa --project pwa-one```
 
+Install static server:
+```npm -g install static-server```
+
+Run app:
+```ng build --prod
+cd dist\pwa-one
+static-server```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
