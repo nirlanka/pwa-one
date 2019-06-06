@@ -2,27 +2,37 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
 
-Installed with:
+Generated with:
 
-```ng new pwa-one --enableIvy=true --inlineStyle=true --inlineTemplate=true --skipTests=tr
-ue --prefix=one --routing=true --skipInstall=true --style=sass```
+```
+ng new pwa-one --enableIvy=true --inlineStyle=true --inlineTemplate=true --skipTests=tr
+ue --prefix=one --routing=true --skipInstall=true --style=sass
+```
 
 PWA setup:
 
-```ng add @angular/pwa --project pwa-one```
+```
+ng add @angular/pwa --project pwa-one
+```
 
 Install static server:
 
-```npm -g install static-server```
+```
+npm -g install static-server
+```
 
 Build app:
 
-```ng build --prod```
+```
+ng build --prod
+```
 
 Run server:
 
-```cd dist\pwa-one
-static-server```
+```
+cd dist\pwa-one
+static-server
+```
 
 ## Hosting PWA (temporarily)
 
