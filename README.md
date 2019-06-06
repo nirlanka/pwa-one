@@ -8,15 +8,25 @@ Installed with:
 ue --prefix=one --routing=true --skipInstall=true --style=sass```
 
 PWA setup:
+
 ```ng add @angular/pwa --project pwa-one```
 
 Install static server:
+
 ```npm -g install static-server```
 
-Run app:
-```ng build --prod
-cd dist\pwa-one
+Build app:
+
+```ng build --prod```
+
+Run server:
+
+```cd dist\pwa-one
 static-server```
+
+## Hosting PWA (temporarily)
+
+Use https://surge.sh for quick hosting with HTTPS.
 
 ## Development server
 

@@ -1,5 +1,6 @@
 {
   "name": "pwa-one",
+  "description": "PWA app test",
   "short_name": "pwa-one",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
