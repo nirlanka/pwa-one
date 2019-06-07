@@ -1,11 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HttpClientModule } from '@angular/common/http';
+
 import { environment } from '../environments/environment';
+
+import { AppRoutingModule } from './app-routing.module';
+
 import { PwaHelperService } from './services/pwa-helper.service';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -14,10 +19,11 @@ import { PwaHelperService } from './services/pwa-helper.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    HttpClientModule,
   ],
   providers: [
-    PwaHelperService,
+    PwaHelperService
   ],
   bootstrap: [AppComponent]
 })

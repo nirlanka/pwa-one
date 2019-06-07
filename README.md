@@ -15,28 +15,13 @@ PWA setup:
 ng add @angular/pwa --project pwa-one
 ```
 
-Install static server:
-
-```
-npm -g install static-server
-```
-
-Build app:
-
-```
-ng build --prod
-```
-
-Run server:
-
-```
-cd dist\pwa-one
-static-server
-```
-
 ## Hosting PWA (temporarily)
 
 Use https://surge.sh for quick hosting with HTTPS.
+
+```
+ng build --prod; cd .\dist\pwa-one; surge; cd ../..;
+```
 
 ## Development server
 
