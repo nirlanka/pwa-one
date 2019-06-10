@@ -6,7 +6,7 @@ import { PwaHelperService } from 'src/app/services/pwa-helper.service';
   selector: 'one-enable-notifications',
   template: `
     <div>
-      <button (click)="onClickEnable()">Install</button>
+      <button (click)="onClickEnable()">Subscribe</button>
     </div>
   `,
   styles: []
