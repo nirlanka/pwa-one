@@ -23,6 +23,11 @@ Use https://surge.sh for quick hosting with HTTPS.
 ng build --prod; cd .\dist\pwa-one; surge ./ pwa-one.surge.sh; cd ../..;
 ```
 
+### Reset 
+1. Hard refresh (ctr+shift+r)
+2. Clean notifications from `chrome://settings/content/notifications`
+3. Remove app through `...` menu
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
