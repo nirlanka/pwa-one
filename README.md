@@ -20,7 +20,7 @@ ng add @angular/pwa --project pwa-one
 Use https://surge.sh for quick hosting with HTTPS.
 
 ```
-ng build --prod; cd .\dist\pwa-one; surge; cd ../..;
+ng build --prod; cd .\dist\pwa-one; surge ./ pwa-one.surge.sh; cd ../..;
 ```
 
 ## Development server

@@ -11,36 +11,54 @@ import { NewsService } from '../api/news.service';
 export class PwaHelperService {
   private _deferredPrompt: any;
 
+  private _isInstallEnabled = false;
+  get isInstallEnabled() {
+    return this._isInstallEnabled;
+  }
+  set isInstallEnabled(v) {
+    ; // do nothing
+  }
+
+  private _installEnabledEvent: Event;
+
   constructor(
     private _swPush: SwPush,
     private _news: NewsService,
   ) { }
 
-  install() {
+  init() {
     window.addEventListener('beforeinstallprompt', (e) => {
-      // Prevent Chrome 67 and earlier from automatically showing the prompt
-      e.preventDefault();
-
-      // Stash the event so it can be triggered later.
-      this._deferredPrompt = e;
-
-      this._deferredPrompt.prompt();
-
-      this._deferredPrompt.userChoice
-        .then((choiceResult: { outcome: string; }) => {
-          if (choiceResult.outcome === 'accepted') {
-            alert('User accepted the A2HS prompt');
-          } else {
-            alert('User dismissed the A2HS prompt');
-          }
-
-          this._deferredPrompt = null;
-        });
+      console.log('Install enabled');
+      this._isInstallEnabled = true;
+      this._installEnabledEvent = e;
     });
 
-    window.addEventListener('appinstalled', (evt) => {
-      alert('App installed');
-    });
+    window.addEventListener('appinstalled', this._onFinishInstall);
+  }
+
+  install() {
+    // Prevent Chrome 67 and earlier from automatically showing the prompt
+    this._installEnabledEvent.preventDefault();
+
+    // Stash the event so it can be triggered later.
+    this._deferredPrompt = this._installEnabledEvent;
+
+    this._deferredPrompt.prompt();
+
+    this._deferredPrompt.userChoice
+      .then((choiceResult: { outcome: string; }) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('Install accepted');
+        } else {
+          console.log('Install dismissed');
+        }
+
+        this._deferredPrompt = null;
+      });
+  }
+
+  private _onFinishInstall(evt: Event) {
+    console.log('App installed');
   }
 
   subscribeToNotifications() {

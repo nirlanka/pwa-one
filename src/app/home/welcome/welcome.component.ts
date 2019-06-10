@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PwaHelperService } from 'src/app/services/pwa-helper.service';
+
 @Component({
   selector: 'one-welcome',
   template: `
-    <div>
+    <div *ngIf="pwaHelper.isInstallEnabled">
       <one-installer></one-installer>
       <one-enable-notifications></one-enable-notifications>
     </div>
@@ -12,7 +14,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public pwaHelper: PwaHelperService,
+  ) { }
 
   ngOnInit() {
   }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PwaHelperService } from './services/pwa-helper.service';
 
 @Component({
   selector: 'one-root',
@@ -12,5 +13,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'pwa-one';
 
-  constructor() { }
+  constructor(
+    private _pwaHelper: PwaHelperService,
+  ) {
+    this._pwaHelper.init();
+  }
 }
