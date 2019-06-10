@@ -17,7 +17,7 @@ export class PwaHelperService {
   ) { }
 
   init() {
-    // this._install();
+    this._install();
     this._subscribeToNotifications();
   }
 
