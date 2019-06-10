@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <div>
       <one-installer></one-installer>
+      <one-enable-notifications></one-enable-notifications>
     </div>
   `,
   styles: []

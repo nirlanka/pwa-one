@@ -16,12 +16,7 @@ export class PwaHelperService {
     private _news: NewsService,
   ) { }
 
-  init() {
-    this._install();
-    this._subscribeToNotifications();
-  }
-
-  private _install() {
+  install() {
     window.addEventListener('beforeinstallprompt', (e) => {
       // Prevent Chrome 67 and earlier from automatically showing the prompt
       e.preventDefault();
@@ -48,7 +43,7 @@ export class PwaHelperService {
     });
   }
 
-  private _subscribeToNotifications() {
+  subscribeToNotifications() {
     this._swPush.requestSubscription({
       serverPublicKey: environment.VAPID_PUBLIC_KEY
     })

@@ -6,13 +6,16 @@ import { PwaHelperService } from '../services/pwa-helper.service';
 
 import { InstallerComponent } from './installer/installer.component';
 import { NewsService } from '../api/news.service';
+import { EnableNotificationsComponent } from './enable-notifications/enable-notifications.component';
 
 @NgModule({
   declarations: [
-    InstallerComponent
+    InstallerComponent,
+    EnableNotificationsComponent,
   ],
   exports: [
     InstallerComponent,
+    EnableNotificationsComponent,
   ],
   imports: [
     CommonModule,

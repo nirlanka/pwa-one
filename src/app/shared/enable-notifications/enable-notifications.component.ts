@@ -3,15 +3,15 @@ import { Component, OnInit } from '@angular/core';
 import { PwaHelperService } from 'src/app/services/pwa-helper.service';
 
 @Component({
-  selector: 'one-installer',
+  selector: 'one-enable-notifications',
   template: `
     <div>
-      <button (click)="onClickInstall()">Install</button>
+      <button (click)="onClickEnable()">Install</button>
     </div>
   `,
   styles: []
 })
-export class InstallerComponent implements OnInit {
+export class EnableNotificationsComponent implements OnInit {
 
   constructor(
     private _pwaHelper: PwaHelperService,
@@ -20,8 +20,8 @@ export class InstallerComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClickInstall() {
-    this._pwaHelper.install();
+  onClickEnable() {
+    this._pwaHelper.subscribeToNotifications();
   }
 
 }
