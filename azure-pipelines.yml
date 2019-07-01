@@ -22,7 +22,7 @@ steps:
 
 - script: |
     ng build --prod
-  displayName: 'Build'
+  displayName: 'Build Angular'
 
 # - task: AzureRmWebAppDeployment@3
 #   inputs:
