@@ -13,12 +13,16 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
-  displayName: 'Install Node.js'
+  displayName: 'Install NodeJS'
 
 - script: |
     npm install -g @angular/cli
     npm install
-  displayName: 'Node install'
+  displayName: 'Install Angular'
+  
+- script: |
+    npm install
+  displayName: 'Install packages'
 
 - script: |
     ng build --prod
